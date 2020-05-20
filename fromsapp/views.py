@@ -292,7 +292,7 @@ def output(request):
     result = ''
     if not arr:
         converted_price = ''
-        result = "Aucun resultat"
+        result = "No result for " + name + " has been found"
     else:
         converted_price = arr[0]
 
