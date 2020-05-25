@@ -10,7 +10,25 @@
     {% if result %}
     <p>{{ result }}</p>
     {% endif %} {% if converted_price %}
-    <p>{{converted_price }}</p>
+    <p> for: {{ converted_price }}</p>
+    {% endif %}
+    {% if converted_price_amazon %}
+    <p>Amazon price: {{ converted_price_amazon }}</p>
+    {% endif %}
+    {% if converted_price_ldlc %}
+    <p>LDLC price: {{ converted_price_ldlc }}</p>
+    {% endif %}
+    {% if converted_price_maxgaming %}
+    <p>Maxgaming price: {{ converted_price_maxgaming }}</p>
+    {% endif %}
+    {% if url_amazon %}
+    <p>{{ url_amazon }}</p>
+    {% endif %}
+    {% if url_ldlc %}
+    <p>{{ url_ldlc }}</p>
+    {% endif %}
+    {% if url_maxgaming %}
+    <p>{{ url_maxgaming }}</p>
     {% endif %}
   </body>
 </html>

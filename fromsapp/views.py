@@ -16,7 +16,7 @@ def contact(request):
 
     form = ContactForm()
 
-    return render(request, 'index.html', {'form': form,})
+    return render(request, 'index.html', {'form': form, })
 
 def output(request):
 
@@ -24,6 +24,9 @@ def output(request):
     prixez = ""
     converted_price = ""
     name = ''
+    url_amazon = ""
+    url_ldlc = ""
+    url_maxgaming = ""
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -93,8 +96,15 @@ def output(request):
                 global converted_price_amazon
                 try:
                     converted_price_amazon = prixez[0:6].replace('\xa0', '').replace(",", ".")
+                    url_item_amazon = self.driver.current_url
+                    nonlocal url_amazon
+                    url_amazon = url_item_amazon
+                    print(url_amazon)
                 except Exception:
                     print('converted_price can\'t be converted because it couldn\'t be found ')
+                    converted_price_amazon = "amazon price not found"
+                    url_item_amazon = "url not retrieved"
+                    url_amazon = "no link found"
                 try:
                     amazon_output = "amazon price: " + converted_price_amazon
                 except Exception:
@@ -179,8 +189,15 @@ def output(request):
 
                     print(title.strip() + "\n")
                     print("LDLC price: " + converted_price_ldlc)
+                    url_item_ldlc = self.driver.current_url
+                    nonlocal url_ldlc
+                    url_ldlc = url_item_ldlc
+                    print(url_ldlc)
                 except Exception:
                     print("LDLC item couldn\'t be found, looking for the next item to compare")
+                    converted_price_ldlc = "LDLC price not found"
+                    url_item_ldlc = "url not retrieved"
+                    url_ldlc = "no link found"
 
 
     items = [name]
@@ -257,8 +274,15 @@ def output(request):
 
                     # print(title.strip() + "\n")
                     print("Maxgaming price: " + converted_price_maxgaming.strip().replace(".", ","))
+                    url_item_maxgaming = self.driver.current_url
+                    nonlocal url_maxgaming
+                    url_maxgaming = url_item_maxgaming
+                    print(url_maxgaming)
+
                 except Exception:
                     print("Maxgaming item couldn\'t be found, code execution will continue..")
+                    converted_price_maxgaming = "MaxGaming price not found"
+                    url_maxgaming = "no link found"
 
 
     items = [name]
@@ -319,4 +343,4 @@ def output(request):
 
 
 
-    return render(request, 'output.html', {'converted_price': converted_price, 'result': result,})
+    return render(request, 'output.html', {'converted_price': converted_price, 'result': result, 'converted_price_amazon': converted_price_amazon, 'converted_price_ldlc': converted_price_ldlc, 'converted_price_maxgaming': converted_price_maxgaming, 'url_amazon': url_amazon, 'url_ldlc': url_ldlc, 'url_maxgaming': url_maxgaming})
