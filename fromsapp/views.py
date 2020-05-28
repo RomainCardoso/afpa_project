@@ -9,6 +9,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
 import time
 import os
+from .models import Search
 
 # Create your views here.
 
@@ -16,7 +17,7 @@ def contact(request):
 
     form = ContactForm()
 
-    return render(request, 'index.html', {'form': form, })
+    return render(request, 'fromsapp/index.html', {'form': form, })
 
 def output(request):
 
@@ -343,4 +344,11 @@ def output(request):
 
 
 
-    return render(request, 'output.html', {'converted_price': converted_price, 'result': result, 'converted_price_amazon': converted_price_amazon, 'converted_price_ldlc': converted_price_ldlc, 'converted_price_maxgaming': converted_price_maxgaming, 'url_amazon': url_amazon, 'url_ldlc': url_ldlc, 'url_maxgaming': url_maxgaming})
+    return render(request, 'fromsapp/output.html', {'converted_price': converted_price, 'result': result, 'converted_price_amazon': converted_price_amazon, 'converted_price_ldlc': converted_price_ldlc, 'converted_price_maxgaming': converted_price_maxgaming, 'url_amazon': url_amazon, 'url_ldlc': url_ldlc, 'url_maxgaming': url_maxgaming})
+
+
+def history(request):
+    context = {
+        'searchs' : Search.objects.all()
+    }
+    return render(request, 'fromsapp/history.html', context)

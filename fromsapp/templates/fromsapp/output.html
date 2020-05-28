@@ -1,0 +1,31 @@
+{% extends 'fromsapp/base.html' %} {% block content %} {% if result %}
+<p>{{ result }}</p>
+{% endif %} {% if converted_price %}
+<p>for: {{ converted_price }}</p>
+{% endif %} {% if converted_price_amazon == 'amazon price not found' %}
+<p>
+  {{ converted_price_amazon }}
+</p>
+{% else %}
+<p>
+  <a href="{{ url_amazon }}">Amazon price: {{ converted_price_amazon }} </a>
+</p>
+{% endif %} {% if converted_price_ldlc == 'ldlc price not found' %}
+<p>
+  {{ converted_price_ldlc }}
+</p>
+{% else %}
+<p>
+  <a href="{{ url_ldlc }}"> LDLC price: {{ converted_price_ldlc }} </a>
+</p>
+{% endif %} {% if converted_price_maxgaming == 'maxgaming price not found' %}
+<p>
+  {{ converted_price_maxgaming }}
+</p>
+{% else %}
+<p>
+  <a href="{{ url_maxgaming }}">
+    Maxgaming price: {{ converted_price_maxgaming }}</a
+  >
+</p>
+{% endif %} {% endblock content %}

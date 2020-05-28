@@ -20,4 +20,5 @@ from . import views
 urlpatterns = [
     path('', views.contact),
     path('output/', views.output),
+    path('history/', views.history, name='history'),
 ]

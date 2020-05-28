@@ -1,0 +1,6 @@
+{% extends 'fromsapp/base.html' %} {% block content %}
+<form method="POST" action="output/">
+  {% csrf_token %} {{ form }}
+  <button type="submit" name="button" class="btn btn-primary">Submit</button>
+</form>
+{% endblock content %}

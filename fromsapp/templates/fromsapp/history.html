@@ -1,0 +1,17 @@
+{% extends 'fromsapp/base.html' %}
+
+{% block content %}
+
+{% for search in searchs %}
+
+<div class="container">
+  <p>{{ search.searched_item}}</p>
+  <p>{{ search.item_url }}</p>
+  <p>{{ search.search_user }}</p>
+</div>
+</br>
+
+{% endfor %}
+
+
+{% endblock content %}
