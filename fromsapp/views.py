@@ -342,9 +342,18 @@ def output(request):
     except Exception:
         print("")
 
+    args = {
+        'converted_price': converted_price,
+        'result': result,
+        'converted_price_amazon': converted_price_amazon,
+        'converted_price_ldlc': converted_price_ldlc,
+        'converted_price_maxgaming': converted_price_maxgaming,
+        'url_amazon': url_amazon,
+        'url_ldlc': url_ldlc,
+        'url_maxgaming': url_maxgaming
+    }
 
-
-    return render(request, 'fromsapp/output.html', {'converted_price': converted_price, 'result': result, 'converted_price_amazon': converted_price_amazon, 'converted_price_ldlc': converted_price_ldlc, 'converted_price_maxgaming': converted_price_maxgaming, 'url_amazon': url_amazon, 'url_ldlc': url_ldlc, 'url_maxgaming': url_maxgaming})
+    return render(request, 'fromsapp/output.html', args)
 
 
 def history(request):
