@@ -5,11 +5,34 @@
 {% for search in searchs %}
 
 <div class="container">
-  <p>{{ search.searched_item}}</p>
-  <p>{{ search.item_url }}</p>
-  <p>{{ search.search_user }}</p>
+  <table class="table table-hover table-danger table-responsive">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">User</th>
+        <th scope="col">Item</th>
+        <th scope="col">Urls</th>
+        <th scope="col">Prices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ search.date_searched }}</td>
+        <td>{{ search.search_user }}</td>
+        <td>{{ search.searched_item }}</td>
+        <td><a href='{{ search.amazon_url }}'>AMAZON LINK</a></br></br>
+            <a href='{{ search.ldlc_url}}'>LDLC LINK</a></br></br>
+            <a href='{{ search.maxgaming_url}}'>MAXGAMING LINK</a>
+        </td>
+        <td>
+           {{ search.amazon_price }}</br></br>
+           {{ search.ldlc_price }}</br></br>
+           {{ search.maxgaming_price }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-</br>
 
 {% endfor %}
 

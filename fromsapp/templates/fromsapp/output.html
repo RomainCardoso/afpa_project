@@ -10,7 +10,7 @@
 <p>
   <a href="{{ url_amazon }}">Amazon price: {{ converted_price_amazon }} </a>
 </p>
-{% endif %} {% if converted_price_ldlc == 'ldlc price not found' %}
+{% endif %} {% if converted_price_ldlc == 'LDLC price not found' %}
 <p>
   {{ converted_price_ldlc }}
 </p>
@@ -18,7 +18,7 @@
 <p>
   <a href="{{ url_ldlc }}"> LDLC price: {{ converted_price_ldlc }} </a>
 </p>
-{% endif %} {% if converted_price_maxgaming == 'maxgaming price not found' %}
+{% endif %} {% if converted_price_maxgaming == 'MaxGaming price not found' %}
 <p>
   {{ converted_price_maxgaming }}
 </p>

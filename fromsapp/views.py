@@ -10,6 +10,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 import os
 from .models import Search
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -353,6 +354,10 @@ def output(request):
         'url_maxgaming': url_maxgaming
     }
 
+    user = User.objects.first()
+
+    search = Search(searched_item = name, amazon_url = url_amazon, ldlc_url = url_ldlc, maxgaming_url = url_maxgaming, amazon_price = converted_price_amazon, ldlc_price = converted_price_ldlc, maxgaming_price = converted_price_maxgaming, search_user = user)
+    search.save()
     return render(request, 'fromsapp/output.html', args)
 
 
