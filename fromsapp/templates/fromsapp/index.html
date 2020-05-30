@@ -1,6 +1,12 @@
-{% extends 'fromsapp/base.html' %} {% block content %}
-<form method="POST" action="output/">
-  {% csrf_token %} {{ form }}
-  <button type="submit" name="button" class="btn btn-primary">Submit</button>
-</form>
+{% extends 'fromsapp/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% if user.is_authenticated %}
+  <form method="POST" action="output/">
+    {% csrf_token %} {{ form|crispy }}
+    <button type="submit" name="button" class="btn btn-outline-info">Submit</button>
+  </form>
+{% else %}
+  <h2>Connectez Vous</h2>
+{% endif %}
 {% endblock content %}

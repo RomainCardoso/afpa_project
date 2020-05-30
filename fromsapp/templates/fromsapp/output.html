@@ -1,31 +1,66 @@
-{% extends 'fromsapp/base.html' %} {% block content %} {% if result %}
+{% extends 'fromsapp/base.html' %}
+
+{% block content %}
+
+{% if result %}
+
 <p>{{ result }}</p>
-{% endif %} {% if converted_price %}
+
+{% endif %}
+
+{% if converted_price %}
+
 <p>for: {{ converted_price }}</p>
-{% endif %} {% if converted_price_amazon == 'amazon price not found' %}
+
+{% endif %}
+
+{% if converted_price_amazon == 'amazon price not found' %}
+
 <p>
   {{ converted_price_amazon }}
 </p>
+
 {% else %}
+
 <p>
   <a href="{{ url_amazon }}">Amazon price: {{ converted_price_amazon }} </a>
 </p>
-{% endif %} {% if converted_price_ldlc == 'LDLC price not found' %}
+{% endif %}
+
+{% if converted_price_ldlc == 'LDLC price not found' %}
+
 <p>
   {{ converted_price_ldlc }}
 </p>
+
 {% else %}
+
 <p>
   <a href="{{ url_ldlc }}"> LDLC price: {{ converted_price_ldlc }} </a>
 </p>
-{% endif %} {% if converted_price_maxgaming == 'MaxGaming price not found' %}
+
+{% endif %}
+
+{% if converted_price_maxgaming == 'MaxGaming price not found' %}
+
 <p>
   {{ converted_price_maxgaming }}
 </p>
+
 {% else %}
+
 <p>
   <a href="{{ url_maxgaming }}">
     Maxgaming price: {{ converted_price_maxgaming }}</a
   >
 </p>
-{% endif %} {% endblock content %}
+
+{% endif %}
+
+<form action="{% url 'add_favorite' %}" method="POST">
+  {% csrf_token %} {{ form }}
+  <button type="submit" class='btn btn-outline-info' name="button">Ajouter aux Favoris</button>
+</form>
+
+
+{% endblock content %}

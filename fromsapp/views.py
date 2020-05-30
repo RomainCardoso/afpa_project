@@ -1,17 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import ContactForm
+from .forms import ContactForm, HiddenForm
 from bs4 import BeautifulSoup
-import requests
-import sys
+import sys, time, os, requests
 from selenium import webdriver
+from django.contrib.auth.decorators import login_required
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
-import time
-import os
-from .models import Search
+from .models import Search, Favorite
 from django.contrib.auth.models import User
-
+from django.contrib.auth.decorators import user_passes_test
 # Create your views here.
 
 def contact(request):
@@ -20,6 +18,7 @@ def contact(request):
 
     return render(request, 'fromsapp/index.html', {'form': form, })
 
+@login_required
 def output(request):
 
     title = ""
@@ -344,6 +343,7 @@ def output(request):
         print("")
 
     args = {
+        'name': name,
         'converted_price': converted_price,
         'result': result,
         'converted_price_amazon': converted_price_amazon,
@@ -354,15 +354,43 @@ def output(request):
         'url_maxgaming': url_maxgaming
     }
 
-    user = User.objects.first()
+    form = HiddenForm()
 
+    user = request.user
     search = Search(searched_item = name, amazon_url = url_amazon, ldlc_url = url_ldlc, maxgaming_url = url_maxgaming, amazon_price = converted_price_amazon, ldlc_price = converted_price_ldlc, maxgaming_price = converted_price_maxgaming, search_user = user)
     search.save()
+
     return render(request, 'fromsapp/output.html', args)
 
-
+@user_passes_test(lambda u: u.is_superuser)
 def history(request):
     context = {
         'searchs' : Search.objects.all()
     }
     return render(request, 'fromsapp/history.html', context)
+
+@login_required
+def add_favorite(request):
+    if request.method == 'POST':
+        form = HiddenForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data.get('name')
+            amazon_price = form.cleaned_data.get('amazon_price')
+            ldlc_price = form.cleaned_data.get('ldlc_price')
+            maxgaming_price = form.cleaned_data.get('maxgaming_price')
+            amazon_url = form.cleaned_data.get('amazon_url')
+            ldlc_url = form.cleaned_data.get('ldlc_url')
+            maxgaming_url = form.cleaned_data.get('maxgaming_url')
+            user = request.user
+            added_favorite = Favorite(name=user, amazon_price=amazon_price, ldlc_price=ldlc_price, maxgaming_price=maxgaming_price, amazon_url=amazon_url, ldlc_url=ldlc_url, maxgaming_url=maxgaming_url, searched_user=user)
+            added_favorite.save()
+
+    return render(request, 'fromsapp/favorites.html')
+
+@login_required
+def favorites(request):
+    args = {
+        'favorites' : Favorite.objects.all()
+    }
+
+    return render(request, 'fromsapp/favorites.html', args)

@@ -1,0 +1,38 @@
+{% extends 'fromsapp/base.html' %}
+
+{% block content %}
+
+{% for favorite in favorites  %}
+
+<div class="container">
+  <table class="table table-hover table-danger table-responsive">
+    <thead>
+      <tr>
+        <th scope="col">User</th>
+        <th scope="col">Item</th>
+        <th scope="col">Urls</th>
+        <th scope="col">Prices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ favorite.search_user }}</td>
+        <td>{{ favorite.name }}</td>
+        <td><a href='{{ favorite.amazon_url }}'>AMAZON LINK</a></br></br>
+            <a href='{{ favorite.ldlc_url}}'>LDLC LINK</a></br></br>
+            <a href='{{ favorite.maxgaming_url}}'>MAXGAMING LINK</a>
+        </td>
+        <td>
+           {{ favorite.amazon_price }}</br></br>
+           {{ favorite.ldlc_price }}</br></br>
+           {{ favorite.maxgaming_price }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+{% endfor %}
+
+
+{% endblock content %}

@@ -18,7 +18,9 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.contact),
+    path('', views.contact, name='fromsapp-home'),
     path('output/', views.output),
     path('history/', views.history, name='history'),
+    path('add_favorite/', views.add_favorite, name='add_favorite'),
+    path('favorites/', views.favorites, name='favorites')
 ]
