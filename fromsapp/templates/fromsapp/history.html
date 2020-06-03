@@ -20,9 +20,22 @@
         <td>{{ search.date_searched }}</td>
         <td>{{ search.search_user }}</td>
         <td>{{ search.searched_item }}</td>
-        <td><a href='{{ search.amazon_url }}'>AMAZON LINK</a></br></br>
+        <td>
+          {% if search.amazon_url != 'no link found' %}
+            <a href='{{ search.amazon_url }}'>AMAZON LINK</a></br></br>
+          {% else %}
+            no link found</br></br>
+          {% endif %}
+          {% if search.ldlc_url != 'no link found' %}
             <a href='{{ search.ldlc_url}}'>LDLC LINK</a></br></br>
+          {% else %}
+            no link found</br></br>
+          {% endif %}
+          {% if search.maxgaming_url != 'no link found' %}
             <a href='{{ search.maxgaming_url}}'>MAXGAMING LINK</a>
+          {% else %}
+            no link found</br></br>
+          {% endif %}
         </td>
         <td>
            {{ search.amazon_price }}</br></br>
