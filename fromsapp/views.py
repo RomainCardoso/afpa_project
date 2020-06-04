@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 from .models import Search, Favorite
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import user_passes_test
-# Create your views here.
+
 
 def contact(request):
 
@@ -342,6 +342,16 @@ def output(request):
     except Exception:
         print("")
 
+    #Get connected user
+    user = request.user
+
+    #Create hidden form for favorites
+    form_fav = HiddenForm(initial = {'name' : name, 'amazon_url': url_amazon, 'ldlc_url': url_ldlc, 'maxgaming_url': url_maxgaming, 'amazon_price': converted_price_amazon, 'ldlc_price': converted_price_ldlc, 'maxgaming_price': converted_price_maxgaming, 'search_user': user})
+
+    #Query to store search in db
+    search = Search(searched_item = name, amazon_url = url_amazon, ldlc_url = url_ldlc, maxgaming_url = url_maxgaming, amazon_price = converted_price_amazon, ldlc_price = converted_price_ldlc, maxgaming_price = converted_price_maxgaming, search_user = user)
+    search.save()
+
     args = {
         'name': name,
         'converted_price': converted_price,
@@ -351,14 +361,9 @@ def output(request):
         'converted_price_maxgaming': converted_price_maxgaming,
         'url_amazon': url_amazon,
         'url_ldlc': url_ldlc,
-        'url_maxgaming': url_maxgaming
+        'url_maxgaming': url_maxgaming,
+        'form': form_fav,
     }
-
-    form = HiddenForm()
-
-    user = request.user
-    search = Search(searched_item = name, amazon_url = url_amazon, ldlc_url = url_ldlc, maxgaming_url = url_maxgaming, amazon_price = converted_price_amazon, ldlc_price = converted_price_ldlc, maxgaming_price = converted_price_maxgaming, search_user = user)
-    search.save()
 
     return render(request, 'fromsapp/output.html', args)
 
@@ -369,8 +374,10 @@ def history(request):
     }
     return render(request, 'fromsapp/history.html', context)
 
+
 @login_required
-def add_favorite(request):
+def favorites(request):
+    user = request.user
     if request.method == 'POST':
         form = HiddenForm(request.POST)
         if form.is_valid():
@@ -381,16 +388,11 @@ def add_favorite(request):
             amazon_url = form.cleaned_data.get('amazon_url')
             ldlc_url = form.cleaned_data.get('ldlc_url')
             maxgaming_url = form.cleaned_data.get('maxgaming_url')
-            user = request.user
-            added_favorite = Favorite(name=user, amazon_price=amazon_price, ldlc_price=ldlc_price, maxgaming_price=maxgaming_price, amazon_url=amazon_url, ldlc_url=ldlc_url, maxgaming_url=maxgaming_url, searched_user=user)
+            added_favorite = Favorite(name=name, amazon_price=amazon_price, ldlc_price=ldlc_price, maxgaming_price=maxgaming_price, amazon_url=amazon_url, ldlc_url=ldlc_url, maxgaming_url=maxgaming_url, search_user=user)
             added_favorite.save()
 
-    return render(request, 'fromsapp/favorites.html')
-
-@login_required
-def favorites(request):
     args = {
-        'favorites' : Favorite.objects.all()
+        'favorites' : user.favorite_set.all(),
     }
 
     return render(request, 'fromsapp/favorites.html', args)

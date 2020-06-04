@@ -18,9 +18,22 @@
       <tr>
         <td>{{ favorite.search_user }}</td>
         <td>{{ favorite.name }}</td>
-        <td><a href='{{ favorite.amazon_url }}'>AMAZON LINK</a></br></br>
+        <td>
+          {% if favorite.amazon_url != 'no link found' %}
+            <a href='{{ favorite.amazon_url }}'>AMAZON LINK</a></br></br>
+          {% else %}
+            no link found</br></br>
+          {% endif %}
+          {% if favorite.ldlc_url != 'no link found' %}
             <a href='{{ favorite.ldlc_url}}'>LDLC LINK</a></br></br>
+          {% else %}
+            no link found</br></br>
+          {% endif %}
+          {% if favorite.maxgaming_url != 'no link found' %}
             <a href='{{ favorite.maxgaming_url}}'>MAXGAMING LINK</a>
+          {% else %}
+            no link found</br></br>
+          {% endif %}
         </td>
         <td>
            {{ favorite.amazon_price }}</br></br>
