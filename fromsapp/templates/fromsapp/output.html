@@ -2,6 +2,16 @@
 
 {% block content %}
 
+{% if item_image != '' %}
+
+  <img src="{{ item_image }}" height="auto" width="364px;"alt="">
+
+{% else %}
+
+  <p>No image found</p>
+
+{% endif %}
+
 {% if result %}
 
 <p>{{ result }}</p>

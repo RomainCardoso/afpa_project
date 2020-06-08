@@ -28,6 +28,7 @@ def output(request):
     url_amazon = ""
     url_ldlc = ""
     url_maxgaming = ""
+    item_image = ''
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -70,7 +71,7 @@ def output(request):
                 search = self.driver.find_element_by_name("q")
                 time.sleep(2)
 
-                search.send_keys(name + " amazon fr" + Keys.ENTER)
+                search.send_keys(name + "+ amazon fr product" + Keys.ENTER)
                 time.sleep(2)
 
                 amazon_link = self.driver.find_element_by_class_name("LC20lb")
@@ -86,6 +87,13 @@ def output(request):
 
                 soup = BeautifulSoup(page.content, 'html.parser')
 
+                try:
+                    images = soup.find(id='landingImage')
+                    nonlocal item_image
+                    item_image = images['src']
+                    print(item_image)
+                except Exception:
+                    print('no image found')
                 try:
                     title = soup.find(id="productTitle").get_text()
                 except Exception:
@@ -179,6 +187,13 @@ def output(request):
 
                 soup = BeautifulSoup(page.content, 'html.parser')
 
+                try:
+                    nonlocal item_image
+                    if item_image == '':
+                        image = soup.find(id='ctl00_cphMainContent_ImgProduct')
+                        item_image = image['src']
+                except Exception:
+                    print('')
                 try:
                     title = soup.find("h1", {"class": "title-1"}).get_text()
                     prixez = soup.find_all('div', {'class': 'price'})
@@ -353,6 +368,7 @@ def output(request):
     search.save()
 
     args = {
+        'item_image': item_image,
         'name': name,
         'converted_price': converted_price,
         'result': result,

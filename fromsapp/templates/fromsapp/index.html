@@ -7,6 +7,9 @@
     <button type="submit" name="button" class="btn btn-outline-info">Submit</button>
   </form>
 {% else %}
-  <h2>Connectez Vous</h2>
+  <div class="border-top pt-3">
+    <h2>Connectez Vous</h2>
+    <small><a href="{% url 'login' %}">Log In</a></small>
+  </div>
 {% endif %}
 {% endblock content %}
