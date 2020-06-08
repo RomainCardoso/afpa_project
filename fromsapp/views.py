@@ -374,7 +374,7 @@ def history(request):
     }
     return render(request, 'fromsapp/history.html', context)
 
-
+#Add fav to DB
 @login_required
 def favorites(request):
     user = request.user
