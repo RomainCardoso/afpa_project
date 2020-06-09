@@ -2,75 +2,107 @@
 
 {% block content %}
 
-{% if item_image != '' %}
 
-  <img src="{{ item_image }}" height="auto" width="364px;"alt="">
 
-{% else %}
+<div class="jumbotron">
+    {% if name_convert %}
+      <h1>{{ name_convert }}</h1>
+      <hr class="my-4">
+    {% endif %}
+    <dIv class="row d-flex flex-row">
 
-  <p>No image found</p>
+      <div id='img' class="col-md">
 
-{% endif %}
+        {% if item_image != '' %}
 
-{% if result %}
+          <img src="{{ item_image }}" height="auto" width="364px;">
 
-<p>{{ result }}</p>
+        {% else %}
 
-{% endif %}
+          <p>No image found</p>
 
-{% if converted_price %}
+        {% endif %}
 
-<p>for: {{ converted_price }}</p>
+      </div>
 
-{% endif %}
+      <div class="col-md d-flex flex-column justify-content-between">
 
-{% if converted_price_amazon == 'amazon price not found' %}
+        <div id="result" class="">
+          {% if result and converted_price %}
 
-<p>
-  {{ converted_price_amazon }}
-</p>
+            <p>{{ result }} for: {{ converted_price }}</p>
 
-{% else %}
+          {% endif %}
 
-<p>
-  <a href="{{ url_amazon }}">Amazon price: {{ converted_price_amazon }} </a>
-</p>
-{% endif %}
+          <hr class="my-4">
 
-{% if converted_price_ldlc == 'LDLC price not found' %}
+          {% if descriptions %}
 
-<p>
-  {{ converted_price_ldlc }}
-</p>
+            <p>{{ descriptions }}</p>
 
-{% else %}
+          {% endif %}
 
-<p>
-  <a href="{{ url_ldlc }}"> LDLC price: {{ converted_price_ldlc }} </a>
-</p>
+        </div>
 
-{% endif %}
+        <hr class="my-4">
 
-{% if converted_price_maxgaming == 'MaxGaming price not found' %}
+        <div id='prices' class="d-flex flex-column align-self-end">
+          {% if converted_price_amazon == 'amazon price not found' %}
 
-<p>
-  {{ converted_price_maxgaming }}
-</p>
+          <p>
+            {{ converted_price_amazon }}
+          </p>
 
-{% else %}
+          {% else %}
 
-<p>
-  <a href="{{ url_maxgaming }}">
-    Maxgaming price: {{ converted_price_maxgaming }}</a
-  >
-</p>
+          <p>
+            <a href="{{ url_amazon }}">Amazon price: {{ converted_price_amazon }} </a>
+          </p>
+          {% endif %}
 
-{% endif %}
+          {% if converted_price_ldlc == 'LDLC price not found' %}
 
-<form action="{% url 'favorites' %}" method="POST">
-  {% csrf_token %} {{ form }}
-  <button type="submit" class='btn btn-outline-info' name="button">Ajouter aux Favoris</button>
-</form>
+          <p>
+            {{ converted_price_ldlc }}
+          </p>
+
+          {% else %}
+
+          <p>
+            <a href="{{ url_ldlc }}"> LDLC price: {{ converted_price_ldlc }} </a>
+          </p>
+
+          {% endif %}
+
+          {% if converted_price_maxgaming == 'MaxGaming price not found' %}
+
+          <p>
+            {{ converted_price_maxgaming }}
+          </p>
+
+          {% else %}
+
+          <p>
+            <a href="{{ url_maxgaming }}">
+              Maxgaming price: {{ converted_price_maxgaming }}</a
+            >
+          </p>
+
+          {% endif %}
+        </div>
+
+      </div>
+
+    </div>
+
+  <hr class="my-4">
+  <form action="{% url 'favorites' %}" class="d-flex justify-content-end" method="POST">
+    {% csrf_token %} {{ form }}
+    <button type="submit" class='btn btn-outline-info' name="button">Ajouter aux Favoris</button>
+  </form>
+
+</div>
+
 
 
 {% endblock content %}

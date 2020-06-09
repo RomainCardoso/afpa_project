@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ContactForm, HiddenForm
 from bs4 import BeautifulSoup
-import sys, time, os, requests
+import sys, time, os, requests, string
 from selenium import webdriver
 from django.contrib.auth.decorators import login_required
 from selenium.webdriver.firefox.options import Options
@@ -25,10 +25,12 @@ def output(request):
     prixez = ""
     converted_price = ""
     name = ''
+    name_convert = ''
     url_amazon = ""
     url_ldlc = ""
     url_maxgaming = ""
     item_image = ''
+    descriptions = ''
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -46,7 +48,7 @@ def output(request):
 
             self.profile = webdriver.FirefoxProfile()
             self.options = Options()
-            self.options.add_argument("--headless")
+            self.options.add_argument("")
             self.options.add_argument("")
             self.driver = webdriver.Firefox(firefox_profile=self.profile,
                                             firefox_options=self.options)
@@ -86,6 +88,8 @@ def output(request):
                 page = requests.get(URL, headers=headers)
 
                 soup = BeautifulSoup(page.content, 'html.parser')
+
+
 
                 try:
                     images = soup.find(id='landingImage')
@@ -194,6 +198,12 @@ def output(request):
                         item_image = image['src']
                 except Exception:
                     print('')
+                try:
+                    nonlocal descriptions
+                    if descriptions == '':
+                        descriptions = soup.find(class_='desc').get_text()
+                except Exception:
+                    print('Description not found')
                 try:
                     title = soup.find("h1", {"class": "title-1"}).get_text()
                     prixez = soup.find_all('div', {'class': 'price'})
@@ -305,6 +315,7 @@ def output(request):
     amazon_bot = MaxgamingBot(items)
     amazon_bot.search_items()
     os.system("taskkill /f /im geckodriver.exe /T")
+    name_convert = string.capwords(name)
 
     arr = []
     try:
@@ -369,7 +380,8 @@ def output(request):
 
     args = {
         'item_image': item_image,
-        'name': name,
+        'name_convert': name_convert,
+        'descriptions': descriptions,
         'converted_price': converted_price,
         'result': result,
         'converted_price_amazon': converted_price_amazon,
