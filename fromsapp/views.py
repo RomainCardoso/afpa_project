@@ -48,8 +48,7 @@ def output(request):
 
             self.profile = webdriver.FirefoxProfile()
             self.options = Options()
-            self.options.add_argument("")
-            self.options.add_argument("")
+            self.options.add_argument("--headless")
             self.driver = webdriver.Firefox(firefox_profile=self.profile,
                                             firefox_options=self.options)
 
@@ -57,9 +56,9 @@ def output(request):
             self.driver.get(self.amazon_url)
 
             # Gets the source
-            self.html = self.driver.page_source
-            self.soup = BeautifulSoup(self.html, 'html.parser')
-            self.html = self.soup.prettify('utf-8')
+            self.lxml = self.driver.page_source
+            self.soup = BeautifulSoup(self.lxml, 'lxml')
+            self.lxml = self.soup.prettify('utf-8')
 
         def search_items(self):
             """Searches through the list of items and
@@ -83,11 +82,11 @@ def output(request):
 
                 URL = self.driver.current_url
 
-                headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0'}
+                headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'}
 
                 page = requests.get(URL, headers=headers)
 
-                soup = BeautifulSoup(page.content, 'html.parser')
+                soup = BeautifulSoup(page.content, 'lxml')
 
 
 
@@ -98,15 +97,18 @@ def output(request):
                     print(item_image)
                 except Exception:
                     print('no image found')
+
                 try:
                     title = soup.find(id="productTitle").get_text()
                 except Exception:
                     print("couldn\'t get title")
+
                 try:
                     prixez = soup.find(id="priceblock_ourprice").get_text()
                 except Exception:
                     print('price htmltag couldn\'t be found')
                 global converted_price_amazon
+
                 try:
                     converted_price_amazon = prixez[0:6].replace('\xa0', '').replace(",", ".")
                     url_item_amazon = self.driver.current_url
@@ -118,6 +120,7 @@ def output(request):
                     converted_price_amazon = "amazon price not found"
                     url_item_amazon = "url not retrieved"
                     url_amazon = "no link found"
+
                 try:
                     amazon_output = "amazon price: " + converted_price_amazon
                 except Exception:
@@ -127,6 +130,7 @@ def output(request):
                     print(title.strip() + "\n")
                 except Exception:
                     print("no title")
+
                 try:
                     print(amazon_output)
                 except Exception:
@@ -288,7 +292,7 @@ def output(request):
                 try:
                     prixez = soup.find_all('div', {'class': 'price'})
 
-                    # if url contains us site url OR eu site url, get the right array index (as array indexes aren't the same based on how the site was coded, depending of the website region)
+                    # if url contains us site url OR eu site url, get the right array index (as array indexes aren't the same based on how the site was coded, depending of the website's region)
                     global converted_price_maxgaming
                     if "us.maxgaming.com" in URL:
                         prixez = prixez[18].text
@@ -296,10 +300,14 @@ def output(request):
                     elif "www.maxgaming.com" in URL:
                         prixez = prixez[21].text
                         converted_price_maxgaming = prixez[0:6]
-                    # ldlc_output = converted_price
+                    elif "www.maxgaming.fi" in URL:
+                        prixez = prixez[21].text
+                        converted_price_maxgaming = prixez[0:6]
 
-                    # print(title.strip() + "\n")
-                    print("Maxgaming price: " + converted_price_maxgaming.strip().replace(".", ","))
+
+                    print("Maxgaming price: " + converted_price_maxgaming.strip())
+                    if "www.maxgaming.fi" in URL and converted_price_maxgaming:
+                        converted_price_maxgaming.strip().replace(",", ".")
                     url_item_maxgaming = self.driver.current_url
                     nonlocal url_maxgaming
                     url_maxgaming = url_item_maxgaming
