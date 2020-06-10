@@ -48,7 +48,7 @@ def output(request):
 
             self.profile = webdriver.FirefoxProfile()
             self.options = Options()
-            self.options.add_argument("--headless")
+            # self.options.add_argument("--headless")
             self.driver = webdriver.Firefox(firefox_profile=self.profile,
                                             firefox_options=self.options)
 
@@ -72,7 +72,7 @@ def output(request):
                 search = self.driver.find_element_by_name("q")
                 time.sleep(2)
 
-                search.send_keys(name + "+ amazon fr product" + Keys.ENTER)
+                search.send_keys(name + " amazon.fr" + Keys.ENTER)
                 time.sleep(2)
 
                 amazon_link = self.driver.find_element_by_class_name("LC20lb")
@@ -82,7 +82,7 @@ def output(request):
 
                 URL = self.driver.current_url
 
-                headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'}
+                headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:77.0) Gecko/20100101 Firefox/77.0'}
 
                 page = requests.get(URL, headers=headers)
 
@@ -95,6 +95,7 @@ def output(request):
                     nonlocal item_image
                     item_image = images['src']
                     print(item_image)
+                    print("\n yep .. that's the image")
                 except Exception:
                     print('no image found')
 
@@ -307,17 +308,25 @@ def output(request):
 
                     print("Maxgaming price: " + converted_price_maxgaming.strip())
                     if "www.maxgaming.fi" in URL and converted_price_maxgaming:
-                        converted_price_maxgaming.strip().replace(",", ".")
+                        converted_price_maxgaming = converted_price_maxgaming.strip().replace(",", ".")
                     url_item_maxgaming = self.driver.current_url
                     nonlocal url_maxgaming
                     url_maxgaming = url_item_maxgaming
                     print(url_maxgaming)
+                    if "www.maxgaming.com/" in url_maxgaming:
+                        print("acces to link has been granted !")
+                    elif "us.maxgaming.com/" in url_maxgaming:
+                        print("acces to link has been granted !")
+                    elif "www.maxgaming.fi" in url_maxgaming:
+                        print("acces to link has been granted !")
+                    else:
+                        print('acces to link has been blocked !')
+                        converted_price_maxgaming = "MaxGaming price not found"
 
                 except Exception:
                     print("Maxgaming item couldn\'t be found, code execution will continue..")
                     converted_price_maxgaming = "MaxGaming price not found"
                     url_maxgaming = "no link found"
-
 
     items = [name]
     amazon_bot = MaxgamingBot(items)
