@@ -92,6 +92,6 @@ a.article-title:hover {
   justify-content: space-around;
 }
 
-img {
+.img_carousel {
   border: 1px solid black;
 }

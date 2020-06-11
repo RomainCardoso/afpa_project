@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib import messages
 from .forms import ContactForm, HiddenForm
 from bs4 import BeautifulSoup
 import sys, time, os, requests, string
@@ -31,6 +32,7 @@ def output(request):
     url_maxgaming = ""
     item_image = ''
     descriptions = ''
+    carousel = []
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -48,7 +50,7 @@ def output(request):
 
             self.profile = webdriver.FirefoxProfile()
             self.options = Options()
-            # self.options.add_argument("--headless")
+            self.options.add_argument("--headless")
             self.driver = webdriver.Firefox(firefox_profile=self.profile,
                                             firefox_options=self.options)
 
@@ -203,6 +205,21 @@ def output(request):
                         item_image = image['src']
                 except Exception:
                     print('')
+
+                try:
+                    images = soup.find_all('img')
+                    product_img = []
+                    for image in images:
+                        product_img.append(image['src'])
+                    count = 14
+                    while count <= 18:
+                        nonlocal carousel
+                        carousel.append(product_img[count])
+                        count += 1
+                    print(carousel)
+                except Exception:
+                    print('empty carousel')
+
                 try:
                     nonlocal descriptions
                     if descriptions == '':
@@ -397,6 +414,7 @@ def output(request):
 
     args = {
         'item_image': item_image,
+        'carousel': carousel,
         'name_convert': name_convert,
         'descriptions': descriptions,
         'converted_price': converted_price,
