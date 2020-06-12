@@ -1,16 +1,20 @@
+import sys, time, os, requests, string, threading
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
-from .forms import ContactForm, HiddenForm
-from bs4 import BeautifulSoup
-import sys, time, os, requests, string
-from selenium import webdriver
 from django.contrib.auth.decorators import login_required
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.common.keys import Keys
-from .models import Search, Favorite
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import user_passes_test
+from .forms import ContactForm, HiddenForm
+from .models import Search, Favorite
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.common.keys import Keys
+
+
+
+
 
 
 def contact(request):
@@ -69,18 +73,15 @@ def output(request):
             for item in self.items:
                 print(f"Searching on Amazon for {item}...")
 
+                self.driver.implicitly_wait(0.55)
                 self.driver.get(self.amazon_url)
 
                 search = self.driver.find_element_by_name("q")
-                time.sleep(2)
 
                 search.send_keys(name + " amazon.fr" + Keys.ENTER)
-                time.sleep(2)
 
                 amazon_link = self.driver.find_element_by_class_name("LC20lb")
                 amazon_link.click()
-
-                time.sleep(2)
 
                 URL = self.driver.current_url
 
@@ -177,18 +178,16 @@ def output(request):
             for item in self.items:
                 print(f"Searching on LDLC for {item}...")
 
+                self.driver.implicitly_wait(0.55)
                 self.driver.get(self.amazon_url)
 
                 search = self.driver.find_element_by_name("q")
-                # time.sleep(2)
 
                 search.send_keys("ldlc " + name + Keys.ENTER)
-                time.sleep(2)
 
                 amazon_link = self.driver.find_element_by_class_name("LC20lb")
                 amazon_link.click()
 
-                time.sleep(2)
 
                 URL = self.driver.current_url
 
@@ -285,18 +284,16 @@ def output(request):
             for item in self.items:
                 print(f"Searching on Maxgaming for {item}...")
 
+                self.driver.implicitly_wait(0.55)
                 self.driver.get(self.amazon_url)
 
                 search = self.driver.find_element_by_name("q")
-                # time.sleep(2)
 
                 search.send_keys("maxgaming " + name + Keys.ENTER)
-                time.sleep(2)
 
                 amazon_link = self.driver.find_element_by_class_name("LC20lb")
                 amazon_link.click()
 
-                time.sleep(2)
 
                 URL = self.driver.current_url
 

@@ -11538,3 +11538,305 @@ JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't fin
 JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
 1591901790851	Marionette	INFO	Listening on port 61239
 1591901790956	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591957641964	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileisga1k"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591957643465	Marionette	INFO	Listening on port 52490
+1591957643478	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: , line 0: uncaught exception: null
+Exiting due to channel error.
+ground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofilemvQhUz"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591957657891	Marionette	INFO	Listening on port 52542
+1591957657934	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: , line 0: uncaught exception: null
+Exiting due to channel error.
+ground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileQ6LJvp"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591957811122	Marionette	INFO	Listening on port 52610
+1591957811154	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 27941 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 27941 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 27941 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 27941 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1591957821250	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofiledV5lRE"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591957822894	Marionette	INFO	Listening on port 52720
+1591957823258	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1591957832669	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofilepIvSp6"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591957834172	Marionette	INFO	Listening on port 52788
+1591957834175	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591958082565	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofile6JBuGf"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958084040	Marionette	INFO	Listening on port 52900
+1591958084072	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28345 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28345 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28345 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28345 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1591958094215	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofilevKxkvW"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958095691	Marionette	INFO	Listening on port 53000
+1591958095721	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591958102014	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileHy02Sa"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958103489	Marionette	INFO	Listening on port 53067
+1591958103521	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591958154326	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileqWzmzT"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958155792	Marionette	INFO	Listening on port 53161
+1591958155832	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: , line 0: uncaught exception: null
+Exiting due to channel error.
+ground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofilevhaVNR"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958182210	Marionette	INFO	Listening on port 53226
+1591958182225	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28318 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28318 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28318 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28318 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1591958192493	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileOSIh3L"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958193995	Marionette	INFO	Listening on port 53330
+1591958194005	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591958201049	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileB4R3h8"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958202525	Marionette	INFO	Listening on port 53400
+1591958202557	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591958321814	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileS1nTa2"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958323298	Marionette	INFO	Listening on port 53518
+1591958323323	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/roccat-kone-pure/s?k=roccat+kone+pure line 10558 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/roccat-kone-pure/s?k=roccat+kone+pure line 10558 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/roccat-kone-pure/s?k=roccat+kone+pure line 10558 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/roccat-kone-pure/s?k=roccat+kone+pure line 10558 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1591958329468	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileY4luwu"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958330937	Marionette	INFO	Listening on port 53602
+1591958330975	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591958336405	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileh74w0t"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958337886	Marionette	INFO	Listening on port 53669
+1591958337914	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://connect.nosto.com/include/mwy95ne7, line 7: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+1591958495762	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileWMxxm8"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958497250	Marionette	INFO	Listening on port 53802
+1591958497278	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28102 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28102 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28102 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28102 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1591958514637	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofilerTD55a"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958516110	Marionette	INFO	Listening on port 53904
+1591958516145	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591958521946	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofilepT1Jcy"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958523405	Marionette	INFO	Listening on port 53972
+1591958523453	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591958589594	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofile6dIeaZ"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958591069	Marionette	INFO	Listening on port 54062
+1591958591102	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 27937 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 27937 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 27937 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 27937 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1591958600606	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileALAtTL"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958602154	Marionette	INFO	Listening on port 54169
+1591958602613	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591958608139	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileAQsagx"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958609616	Marionette	INFO	Listening on port 54233
+1591958609644	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 18700, G1591958673612	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileb1kGQq"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958675084	Marionette	INFO	Listening on port 54370
+1591958675120	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28217 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28217 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28217 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28217 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1591958684473	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileoVcs5J"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958685929	Marionette	INFO	Listening on port 54472
+1591958685980	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591958691217	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofile92xVRV"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591958692683	Marionette	INFO	Listening on port 54539
+1591958692724	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591963359831	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileMoRsv5"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591963361385	Marionette	INFO	Listening on port 59809
+1591963361840	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28141 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28141 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28141 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28141 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1591963370870	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileTlhPU7"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591963372446	Marionette	INFO	Listening on port 59916
+1591963372877	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591963378439	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofilelBMNE2"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591963380029	Marionette	INFO	Listening on port 59980
+1591963380449	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down1591967771275	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileZCKXU6"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591967772824	Marionette	INFO	Listening on port 52231
+1591967773283	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28142 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28142 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28142 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28142 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1591967782645	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileqfBkoH"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591967784093	Marionette	INFO	Listening on port 52327
+1591967784152	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591967789517	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileJSTn4H"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591967791115	Marionette	INFO	Listening on port 52396
+1591967791525	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591967891348	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileBNjo89"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591967892849	Marionette	INFO	Listening on port 52509
+1591967892856	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28322 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28322 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28322 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28322 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1591967902999	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofile7ZToMD"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591967904460	Marionette	INFO	Listening on port 52613
+1591967904508	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591967909937	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofile4HZgL7"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591967911543	Marionette	INFO	Listening on port 52684
+1591967911946	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591967941403	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileRs3nxJ"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591967942929	Marionette	INFO	Listening on port 52768
+1591967943410	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28184 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28184 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28184 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28184 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down1591967952247	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileE5AIlw"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591967953825	Marionette	INFO	Listening on port 52876
+1591967954254	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591967959331	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileVe3DDQ"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591967960907	Marionette	INFO	Listening on port 52941
+1591967961337	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591968028688	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileZDzLtT"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591968030225	Marionette	INFO	Listening on port 53045
+1591968030695	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28195 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28195 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28195 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28195 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1591968039874	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileLlipW1"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591968041532	Marionette	INFO	Listening on port 53148
+1591968041881	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 16916, Gecko_IOThread] WARNING: pipe error: 2321591968047288	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofilejfD6oy"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591968048791	Marionette	INFO	Listening on port 53215
+1591968048795	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591968093320	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofileQElv95"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591968094832	Marionette	INFO	Listening on port 53315
+1591968095329	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28083 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28083 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28083 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Logitech-Pro-Wireless-Gaming-Mouse/dp/B07G5XJLWK line 28083 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1591968105098	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofilew9175W"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591968106611	Marionette	INFO	Listening on port 53421
+1591968106618	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591968112020	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\camil\\AppData\\Local\\Temp\\rust_mozprofilelTP4zq"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591968113631	Marionette	INFO	Listening on port 53486
+1591968114029	Marionette	WARN	TLS certificate errors will be ignored for this session
