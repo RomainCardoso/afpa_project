@@ -80,8 +80,17 @@ def output(request):
 
                 search.send_keys(name + " amazon.fr" + Keys.ENTER)
 
-                amazon_link = self.driver.find_element_by_class_name("LC20lb")
-                amazon_link.click()
+                try:
+                    amazon_link = self.driver.find_element_by_class_name("LC20lb")
+                    amazon_link.click()
+                except Exception:
+                    print("usual can't click 'LC20lb' because another html tag obscures it .. trying the blocking tag instead !")
+
+                try:
+                    amazon_link = self.driver.find_element_by_class_name("TbwUpd")
+                    amazon_link.click()
+                except Exception:
+                    print("initial targetted tag worked !")
 
                 URL = self.driver.current_url
 
@@ -185,8 +194,17 @@ def output(request):
 
                 search.send_keys("ldlc " + name + Keys.ENTER)
 
-                amazon_link = self.driver.find_element_by_class_name("LC20lb")
-                amazon_link.click()
+                try:
+                    amazon_link = self.driver.find_element_by_class_name("LC20lb")
+                    amazon_link.click()
+                except Exception:
+                    print("usual can't click 'LC20lb' because another html tag obscures it .. trying the blocking tag instead !")
+
+                try:
+                    amazon_link = self.driver.find_element_by_class_name("TbwUpd")
+                    amazon_link.click()
+                except Exception:
+                    print("initial targetted tag worked !")
 
 
                 URL = self.driver.current_url
@@ -291,8 +309,17 @@ def output(request):
 
                 search.send_keys("maxgaming " + name + Keys.ENTER)
 
-                amazon_link = self.driver.find_element_by_class_name("LC20lb")
-                amazon_link.click()
+                try:
+                    amazon_link = self.driver.find_element_by_class_name("LC20lb")
+                    amazon_link.click()
+                except Exception:
+                    print("usual can't click 'LC20lb' because another html tag obscures it .. trying the blocking tag instead !")
+
+                try:
+                    amazon_link = self.driver.find_element_by_class_name("TbwUpd")
+                    amazon_link.click()
+                except Exception:
+                    print("initial targetted tag worked !")
 
 
                 URL = self.driver.current_url

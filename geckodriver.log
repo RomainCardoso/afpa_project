@@ -11979,3 +11979,43 @@ JavaScript warning: https://connect.nosto.com/include/mwy95ne7, line 7: Using //
 
 ###!!! [Parent][MessageChannel] Error: (msgtype=0x380133,name=PContent::Msg_AsyncMessage) Channel error: cannot send/recv
 
+1591989927862	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\lmaob\\AppData\\Local\\Temp\\rust_mozprofilex20JE3"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591989929179	Marionette	INFO	Listening on port 50677
+1591989929373	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Razer-Ultra-L%C3%A9g%C3%A8re-Bimanuelle-Commutateurs-%C3%A9clairage/dp/B07V6Z9RW4 line 27420 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Razer-Ultra-L%C3%A9g%C3%A8re-Bimanuelle-Commutateurs-%C3%A9clairage/dp/B07V6Z9RW4 line 27420 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Razer-Ultra-L%C3%A9g%C3%A8re-Bimanuelle-Commutateurs-%C3%A9clairage/dp/B07V6Z9RW4 line 27420 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Razer-Ultra-L%C3%A9g%C3%A8re-Bimanuelle-Commutateurs-%C3%A9clairage/dp/B07V6Z9RW4 line 27420 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1591989940614	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\lmaob\\AppData\\Local\\Temp\\rust_mozprofilevJAMMP"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591989941964	Marionette	INFO	Listening on port 50812
+1591989942125	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1591991356283	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\lmaob\\AppData\\Local\\Temp\\rust_mozprofileCqLsZX"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591991357593	Marionette	INFO	Listening on port 50976
+1591991357794	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.fr/Razer-Ultra-L%C3%A9g%C3%A8re-Bimanuelle-Commutateurs-%C3%A9clairage/dp/B07V6Z9RW4 line 27325 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Razer-Ultra-L%C3%A9g%C3%A8re-Bimanuelle-Commutateurs-%C3%A9clairage/dp/B07V6Z9RW4 line 27325 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Razer-Ultra-L%C3%A9g%C3%A8re-Bimanuelle-Commutateurs-%C3%A9clairage/dp/B07V6Z9RW4 line 27325 > scriptElement, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://www.amazon.fr/Razer-Ultra-L%C3%A9g%C3%A8re-Bimanuelle-Commutateurs-%C3%A9clairage/dp/B07V6Z9RW4 line 27325 > scriptElement, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1591991368671	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\lmaob\\AppData\\Local\\Temp\\rust_mozprofileHdvA6Q"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591991369973	Marionette	INFO	Listening on port 51082
+1591991370188	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591991376640	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "" "-foreground" "-no-remote" "-profile" "C:\\Users\\lmaob\\AppData\\Local\\Temp\\rust_mozprofile4vmzSa"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591991377975	Marionette	INFO	Listening on port 51151
+1591991378153	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://connect.nosto.com/include/mwy95ne7, line 7: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
