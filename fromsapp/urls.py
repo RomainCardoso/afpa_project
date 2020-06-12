@@ -19,7 +19,7 @@ from . import views
 
 urlpatterns = [
     path('', views.contact, name='fromsapp-home'),
-    path('output/', views.output),
+    path('output/', views.output, name='output'),
     path('history/', views.history, name='history'),
     path('favorites/', views.favorites, name='favorites')
 ]

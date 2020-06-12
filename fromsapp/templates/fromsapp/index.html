@@ -4,7 +4,11 @@
 {% if user.is_authenticated %}
   <form method="POST" action="output/">
     {% csrf_token %} {{ form|crispy }}
-    <button type="submit" name="button" class="btn btn-outline-info">Submit</button>
+    <button id='search_button' type="submit" name="button" class="btn btn-outline-info">Submit</button>
+    <button id='load_button' type="submit" name="button" class="btn btn-outline-info" disabled>
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Loading...
+    </button>
   </form>
 {% else %}
   <div class="border-top pt-3">
