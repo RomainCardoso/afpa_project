@@ -180,7 +180,7 @@ def output(request):
                 self.driver.get(self.amazon_url)
 
                 search = self.driver.find_element_by_name("q")
-                time.sleep(2)
+                # time.sleep(2)
 
                 search.send_keys("ldlc " + name + Keys.ENTER)
                 time.sleep(2)
@@ -288,7 +288,7 @@ def output(request):
                 self.driver.get(self.amazon_url)
 
                 search = self.driver.find_element_by_name("q")
-                time.sleep(2)
+                # time.sleep(2)
 
                 search.send_keys("maxgaming " + name + Keys.ENTER)
                 time.sleep(2)
