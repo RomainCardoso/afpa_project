@@ -58,7 +58,7 @@ def output(request):
             self.driver = webdriver.Firefox(firefox_profile=self.profile,
                                             firefox_options=self.options)
 
-            # Navigate to the Amazon URL.
+            # Navigate to the starting URL.
             self.driver.get(self.amazon_url)
 
             # Gets the source
@@ -337,13 +337,25 @@ def output(request):
                     # if url contains us site url OR eu site url, get the right array index (as array indexes aren't the same based on how the site was coded, depending of the website's region)
                     global converted_price_maxgaming
                     if "us.maxgaming.com" in URL:
-                        prixez = prixez[18].text
-                        converted_price_maxgaming = prixez[2:8]
+                        prixez = soup.find('span', {'class': 'PrisREA'}).get_text()
+                        if prixez:
+                            print(prixez)
+                        else:
+                            print('html tag not found')
+                        converted_price_maxgaming = prixez[1:7]
                     elif "www.maxgaming.com" in URL:
-                        prixez = prixez[21].text
+                        prixez = soup.find('span', {'class': 'PrisBOLD'}).get_text()
+                        if prixez:
+                            print(prixez)
+                        else:
+                            print('html tag not found')
                         converted_price_maxgaming = prixez[0:6]
                     elif "www.maxgaming.fi" in URL:
-                        prixez = prixez[21].text
+                        prixez = soup.find('span', {'class': 'PrisBOLD'}).get_text()
+                        if prixez:
+                            print(prixez)
+                        else:
+                            print('html tag not found')
                         converted_price_maxgaming = prixez[0:6]
 
 
