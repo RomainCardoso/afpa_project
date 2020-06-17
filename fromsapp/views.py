@@ -369,14 +369,14 @@ def output(request):
                             print(prixez)
                         else:
                             print('html tag not found')
-                        converted_price_maxgaming = prixez[0:8]
+                        converted_price_maxgaming = prixez[0:6]
                     elif "www.maxgaming.fi" in URL:
                         prixez = soup.find('span', {'class': 'PrisBOLD'}).get_text()
                         if prixez:
                             print(prixez)
                         else:
                             print('html tag not found')
-                        converted_price_maxgaming = prixez[0:8]
+                        converted_price_maxgaming = prixez[0:6]
 
                     print("Maxgaming price: " + converted_price_maxgaming.strip())
                     if "www.maxgaming.fi" in URL and converted_price_maxgaming:
@@ -415,7 +415,7 @@ def output(request):
         if 'amazon.com' in url_amazon:
             arr.append(prix_euros_amazon)
         elif converted_price_amazon == 'amazon price not found':
-            pass
+            print('converted_price_amazon')
         else:
             arr.append(converted_price_amazon)
 
@@ -425,19 +425,19 @@ def output(request):
         print("LDLC price not found")
     else:
         if converted_price_ldlc == 'LDLC price not found':
-            pass
+            print(converted_price_ldlc)
         else:
             arr.append(converted_price_ldlc)
 
     try:
-        print("Maxgaming price: " + prix_euros_maxgaming)
+        print("Maxgaming price: " + converted_price_maxgaming)
     except Exception:
         print("Maxgaming price not found")
     else:
         if "us.maxgaming.com" in url_maxgaming:
             arr.append(prix_euros_maxgaming)
         elif converted_price_maxgaming == 'MaxGaming price not found':
-            pass
+            print(converted_price_maxgaming)
         else:
             arr.append(converted_price_maxgaming)
 
@@ -466,7 +466,7 @@ def output(request):
         print("")
 
     try:
-        if arr[0] == converted_price_amazon or arr[0] == prix_euros_maxgaming:
+        if arr[0] == converted_price_maxgaming or arr[0] == prix_euros_maxgaming:
             print("According to us, you should consider buying " + name + " from MaxGaming")
             result = "According to us, you should consider buying "  + name +  " from MaxGaming"
     except Exception:
@@ -493,6 +493,7 @@ def output(request):
         'converted_price_ldlc': converted_price_ldlc,
         'converted_price_maxgaming': converted_price_maxgaming,
         'prix_euros_maxgaming': prix_euros_maxgaming,
+        'prix_euros_amazon': prix_euros_amazon,
         'url_amazon': url_amazon,
         'url_ldlc': url_ldlc,
         'url_maxgaming': url_maxgaming,
