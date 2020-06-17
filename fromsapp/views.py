@@ -55,7 +55,6 @@ def output(request):
             """Setup bot for Amazon URL."""
             self.amazon_url = "https://www.google.com/"
             self.items = items
-
             self.profile = webdriver.FirefoxProfile()
             self.options = Options()
             self.options.add_argument("--headless")
@@ -82,7 +81,7 @@ def output(request):
 
                 search = self.driver.find_element_by_name("q")
 
-                search.send_keys(name + " amazon.com" + Keys.ENTER)
+                search.send_keys(name + " amazon.fr" + Keys.ENTER)
 
                 try:
                     amazon_link = self.driver.find_element_by_class_name("LC20lb")
@@ -123,7 +122,7 @@ def output(request):
                 try:
                     if "amazon.com" in URL:
                         prixez = soup.find(id="priceblock_ourprice").get_text()
-                        prix_a_convertir = prixez[0:6]
+                        prix_a_convertir = prixez[1:6]
                         print('prix a convertir = ' + prix_a_convertir)
                         to_float = float(prix_a_convertir)
                         conversion = to_float * 0.89
@@ -182,7 +181,6 @@ def output(request):
             self.profile = webdriver.FirefoxProfile()
             self.options = Options()
             self.options.add_argument("--headless")
-            self.options.add_argument("")
             self.driver = webdriver.Firefox(firefox_profile=self.profile,
                                             firefox_options=self.options)
 
@@ -222,6 +220,7 @@ def output(request):
 
 
                 URL = self.driver.current_url
+                print(URL)
 
                 headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0'}
 
@@ -293,11 +292,9 @@ def output(request):
             """Setup bot for LDLC URL."""
             self.amazon_url = "https://www.google.com/"
             self.items = items
-
             self.profile = webdriver.FirefoxProfile()
             self.options = Options()
             self.options.add_argument("--headless")
-            self.options.add_argument("")
             self.driver = webdriver.Firefox(firefox_profile=self.profile,
                                             firefox_options=self.options)
 
@@ -346,37 +343,67 @@ def output(request):
 
                 # title = soup.find("h1", {"class": "title-1"}).get_text()
                 try:
-                    prixez = soup.find_all('div', {'class': 'price'})
 
                     # if url contains us site url OR eu site url, get the right array index (as array indexes aren't the same based on how the site was coded, depending of the website's region)
                     global converted_price_maxgaming
                     if "us.maxgaming.com" in URL:
-                        prixez = soup.find('span', {'class': 'PrisREA'}).get_text()
-                        if prixez:
-                            print(prixez)
-                        else:
-                            print('html tag not found')
-                        converted_price_maxgaming = prixez[0:7]
-                        prix_a_convertir = prixez[1:7]
-                        print('prix a convertir = ' + prix_a_convertir)
-                        to_float = float(prix_a_convertir)
-                        conversion = to_float * 0.89
-                        nonlocal prix_euros_maxgaming
-                        prix_euros_maxgaming = str(format(conversion, '.2f'))
+                        try:
+                            prixez = soup.find('span', {'class': 'PrisREA'}).get_text()
+                            print('price used PrisREA span')
+                            converted_price_maxgaming = prixez[0:7]
+                            prix_a_convertir = prixez[1:7]
+                            print('prix a convertir = ' + prix_a_convertir)
+                            to_float = float(prix_a_convertir)
+                            conversion = to_float * 0.89
+                            nonlocal prix_euros_maxgaming
+                            prix_euros_maxgaming = str(format(conversion, '.2f'))
+                        except Exception:
+                            print('')
+
+                        try:
+                            prixez = soup.find('span', {'class': 'PrisBOLD'}).get_text()
+                            print('price used PrisBOLD span')
+                            converted_price_maxgaming = prixez[0:7]
+                            prix_a_convertir = prixez[1:7]
+                            print('prix a convertir = ' + prix_a_convertir)
+                            to_float = float(prix_a_convertir)
+                            conversion = to_float * 0.89
+                            prix_euros_maxgaming = str(format(conversion, '.2f'))
+                        except Exception:
+                            print('')
+
                     elif "www.maxgaming.com" in URL:
-                        prixez = soup.find('span', {'class': 'PrisBOLD'}).get_text()
-                        if prixez:
+                        try:
+                            prixez = soup.find('span', {'class': 'PrisBOLD'}).get_text()
+                            print('price used PrisBOLD span')
                             print(prixez)
-                        else:
-                            print('html tag not found')
-                        converted_price_maxgaming = prixez[0:6]
+                            converted_price_maxgaming = prixez[0:6]
+                        except Exception:
+                            print('')
+
+                        try:
+                            prixez = soup.find('span', {'class': 'PrisREA'}).get_text()
+                            print('price used PrisREA span')
+                            print(prixez)
+                            converted_price_maxgaming = prixez[0:6]
+                        except Exception:
+                            print('')
                     elif "www.maxgaming.fi" in URL:
-                        prixez = soup.find('span', {'class': 'PrisBOLD'}).get_text()
-                        if prixez:
+                        try:
+                            prixez = soup.find('span', {'class': 'PrisBOLD'}).get_text()
+                            print('price used PrisBOLD span')
                             print(prixez)
-                        else:
-                            print('html tag not found')
-                        converted_price_maxgaming = prixez[0:6]
+                            converted_price_maxgaming = prixez[0:6]
+                        except Exception:
+                            print('')
+
+                        try:
+                            prixez = soup.find('span', {'class': 'PrisREA'}).get_text()
+                            print('price used PrisREA span')
+                            print(prixez)
+                            converted_price_maxgaming = prixez[0:6]
+                        except Exception:
+                            print('')
 
                     print("Maxgaming price: " + converted_price_maxgaming.strip())
                     if "www.maxgaming.fi" in URL and converted_price_maxgaming:
@@ -415,7 +442,7 @@ def output(request):
         if 'amazon.com' in url_amazon:
             arr.append(prix_euros_amazon)
         elif converted_price_amazon == 'amazon price not found':
-            print('converted_price_amazon')
+            print('')
         else:
             arr.append(converted_price_amazon)
 
@@ -425,7 +452,7 @@ def output(request):
         print("LDLC price not found")
     else:
         if converted_price_ldlc == 'LDLC price not found':
-            print(converted_price_ldlc)
+            print('')
         else:
             arr.append(converted_price_ldlc)
 
@@ -437,7 +464,7 @@ def output(request):
         if "us.maxgaming.com" in url_maxgaming:
             arr.append(prix_euros_maxgaming)
         elif converted_price_maxgaming == 'MaxGaming price not found':
-            print(converted_price_maxgaming)
+            print('')
         else:
             arr.append(converted_price_maxgaming)
 
