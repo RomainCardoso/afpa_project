@@ -57,7 +57,7 @@
         <div id="result" class="">
           {% if result and converted_price %}
 
-            <p>{{ result }} for: {{ converted_price }}</p>
+            <p>{{ result }} for: {{ converted_price }} €</p>
 
           {% endif %}
 
@@ -80,11 +80,18 @@
             {{ converted_price_amazon }}
           </p>
 
+          {% elif converted_price_amazon and prix_euros_amazon %}
+
+          <p>
+            <a href="{{ url_amazon }}">Amazon price: {{ converted_price_amazon }} € {% if prix_euros_maxgaming != 0 %} (~{{ prix_euros_amazon }} €) {% endif %} </a>
+          </p>
+
           {% else %}
 
           <p>
-            <a href="{{ url_amazon }}">Amazon price: {{ converted_price_amazon }} </a>
+            <a href="{{ url_amazon }}">Amazon price: {{ converted_price_amazon }} €</a>
           </p>
+
           {% endif %}
 
           {% if converted_price_ldlc == 'LDLC price not found' %}
@@ -96,7 +103,7 @@
           {% else %}
 
           <p>
-            <a href="{{ url_ldlc }}"> LDLC price: {{ converted_price_ldlc }} </a>
+            <a href="{{ url_ldlc }}"> LDLC price: {{ converted_price_ldlc }} € </a>
           </p>
 
           {% endif %}
@@ -105,6 +112,14 @@
 
           <p>
             {{ converted_price_maxgaming }}
+          </p>
+
+          {% elif converted_price_maxgaming and prix_euros_maxgaming %}
+
+          <p>
+            <a href="{{ url_maxgaming }}">
+              Maxgaming price: {{ converted_price_maxgaming }} {% if prix_euros_maxgaming != 0 %} (~{{ prix_euros_maxgaming }} €) {% endif %}</a
+            >
           </p>
 
           {% else %}

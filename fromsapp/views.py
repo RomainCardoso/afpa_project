@@ -23,12 +23,16 @@ def contact(request):
 
     return render(request, 'fromsapp/index.html', {'form': form, })
 
+
+
 @login_required
 def output(request):
 
     title = ""
     prixez = ""
     converted_price = ""
+    prix_euros_amazon = 0
+    prix_euros_maxgaming = 0
     name = ''
     name_convert = ''
     url_amazon = ""
@@ -78,7 +82,7 @@ def output(request):
 
                 search = self.driver.find_element_by_name("q")
 
-                search.send_keys(name + " amazon.fr" + Keys.ENTER)
+                search.send_keys(name + " amazon.com" + Keys.ENTER)
 
                 try:
                     amazon_link = self.driver.find_element_by_class_name("LC20lb")
@@ -117,7 +121,17 @@ def output(request):
                     print("couldn\'t get title")
 
                 try:
-                    prixez = soup.find(id="priceblock_ourprice").get_text()
+                    if "amazon.com" in URL:
+                        prixez = soup.find(id="priceblock_ourprice").get_text()
+                        prix_a_convertir = prixez[0:6]
+                        print('prix a convertir = ' + prix_a_convertir)
+                        to_float = float(prix_a_convertir)
+                        conversion = to_float * 0.89
+                        nonlocal prix_euros_amazon
+                        prix_euros_amazon = str(format(conversion, '.2f'))
+                    else:
+                        prixez = soup.find(id="priceblock_ourprice").get_text()
+
                 except Exception:
                     print('price htmltag couldn\'t be found')
                 global converted_price_amazon
@@ -342,22 +356,27 @@ def output(request):
                             print(prixez)
                         else:
                             print('html tag not found')
-                        converted_price_maxgaming = prixez[1:7]
+                        converted_price_maxgaming = prixez[0:7]
+                        prix_a_convertir = prixez[1:7]
+                        print('prix a convertir = ' + prix_a_convertir)
+                        to_float = float(prix_a_convertir)
+                        conversion = to_float * 0.89
+                        nonlocal prix_euros_maxgaming
+                        prix_euros_maxgaming = str(format(conversion, '.2f'))
                     elif "www.maxgaming.com" in URL:
                         prixez = soup.find('span', {'class': 'PrisBOLD'}).get_text()
                         if prixez:
                             print(prixez)
                         else:
                             print('html tag not found')
-                        converted_price_maxgaming = prixez[0:6]
+                        converted_price_maxgaming = prixez[0:8]
                     elif "www.maxgaming.fi" in URL:
                         prixez = soup.find('span', {'class': 'PrisBOLD'}).get_text()
                         if prixez:
                             print(prixez)
                         else:
                             print('html tag not found')
-                        converted_price_maxgaming = prixez[0:6]
-
+                        converted_price_maxgaming = prixez[0:8]
 
                     print("Maxgaming price: " + converted_price_maxgaming.strip())
                     if "www.maxgaming.fi" in URL and converted_price_maxgaming:
@@ -367,13 +386,13 @@ def output(request):
                     url_maxgaming = url_item_maxgaming
                     print(url_maxgaming)
                     if "www.maxgaming.com/" in url_maxgaming:
-                        print("acces to link has been granted !")
+                        print("access to link has been granted !")
                     elif "us.maxgaming.com/" in url_maxgaming:
-                        print("acces to link has been granted !")
+                        print("access to link has been granted !")
                     elif "www.maxgaming.fi" in url_maxgaming:
-                        print("acces to link has been granted !")
+                        print("access to link has been granted !")
                     else:
-                        print('acces to link has been blocked !')
+                        print('access to link has been blocked !')
                         converted_price_maxgaming = "MaxGaming price not found"
 
                 except Exception:
@@ -393,23 +412,37 @@ def output(request):
     except Exception:
         print("amazon price not found")
     else:
-        arr.append(converted_price_amazon)
+        if 'amazon.com' in url_amazon:
+            arr.append(prix_euros_amazon)
+        elif converted_price_amazon == 'amazon price not found':
+            pass
+        else:
+            arr.append(converted_price_amazon)
 
     try:
         print("LDLC price: " + converted_price_ldlc)
     except Exception:
         print("LDLC price not found")
     else:
-        arr.append(converted_price_ldlc)
+        if converted_price_ldlc == 'LDLC price not found':
+            pass
+        else:
+            arr.append(converted_price_ldlc)
 
     try:
-        print("Maxgaming price: " + converted_price_maxgaming.strip())
+        print("Maxgaming price: " + prix_euros_maxgaming)
     except Exception:
         print("Maxgaming price not found")
     else:
-        arr.append(converted_price_maxgaming)
+        if "us.maxgaming.com" in url_maxgaming:
+            arr.append(prix_euros_maxgaming)
+        elif converted_price_maxgaming == 'MaxGaming price not found':
+            pass
+        else:
+            arr.append(converted_price_maxgaming)
 
-    arr.sort()
+
+    arr.sort(key=float)
     result = ''
     if not arr:
         converted_price = ''
@@ -418,7 +451,8 @@ def output(request):
         converted_price = arr[0]
 
     try:
-        if arr[0] == converted_price_amazon:
+        converted_price_amazon
+        if arr[0] == converted_price_amazon or arr[0] == prix_euros_amazon:
             print("According to us, you should consider buying " + name + " from Amazon")
             result = "According to us, you should consider buying " + name + " from Amazon"
     except Exception:
@@ -432,7 +466,7 @@ def output(request):
         print("")
 
     try:
-        if arr[0] == converted_price_maxgaming:
+        if arr[0] == converted_price_amazon or arr[0] == prix_euros_maxgaming:
             print("According to us, you should consider buying " + name + " from MaxGaming")
             result = "According to us, you should consider buying "  + name +  " from MaxGaming"
     except Exception:
@@ -458,6 +492,7 @@ def output(request):
         'converted_price_amazon': converted_price_amazon,
         'converted_price_ldlc': converted_price_ldlc,
         'converted_price_maxgaming': converted_price_maxgaming,
+        'prix_euros_maxgaming': prix_euros_maxgaming,
         'url_amazon': url_amazon,
         'url_ldlc': url_ldlc,
         'url_maxgaming': url_maxgaming,
