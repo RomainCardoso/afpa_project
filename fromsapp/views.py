@@ -17,7 +17,7 @@ from selenium.webdriver.common.keys import Keys
 
 
 
-def contact(request):
+def search_form(request):
 
     form = ContactForm()
 
@@ -47,13 +47,13 @@ def output(request):
         if form.is_valid():
             name = form.cleaned_data['item']
 
-    class AmazonBot(object):
-        """Parses relevant information from a text file consisting of
+    class AmazonBot():
+        """Parses relevant information consisting of
         Amazon links."""
 
         def __init__(self, items):
             """Setup bot for Amazon URL."""
-            self.amazon_url = "https://www.google.com/"
+            self.entry = "https://www.google.com/"
             self.items = items
             self.profile = webdriver.FirefoxProfile()
             self.options = Options()
@@ -62,7 +62,7 @@ def output(request):
                                             firefox_options=self.options)
 
             # Navigate to the starting URL.
-            self.driver.get(self.amazon_url)
+            self.driver.get(self.entry)
 
             # Gets the source
             self.lxml = self.driver.page_source
@@ -70,14 +70,14 @@ def output(request):
             self.lxml = self.soup.prettify('utf-8')
 
         def search_items(self):
-            """Searches through the list of items and
-            obtains name, price, and URL information for each item."""
+            """Searches items and
+            obtains name, price, and URL information for item."""
 
             for item in self.items:
                 print(f"Searching on Amazon for {item}...")
 
                 self.driver.implicitly_wait(0.55)
-                self.driver.get(self.amazon_url)
+                self.driver.get(self.entry)
 
                 search = self.driver.find_element_by_name("q")
 
@@ -110,7 +110,7 @@ def output(request):
                     nonlocal item_image
                     item_image = images['src']
                     print(item_image)
-                    print("\n yep .. that's the image")
+                    print("\n Image found.")
                 except Exception:
                     print('no image found')
 
@@ -169,13 +169,13 @@ def output(request):
     os.system("taskkill /f /im geckodriver.exe /T")
 
 
-    class LDLCBot(object):
+    class LDLCBot():
         """Parses relevant information from a text file consisting of
         LDLC links."""
 
         def __init__(self, items):
             """Setup bot for LDLC URL."""
-            self.amazon_url = "https://www.google.com/"
+            self.entry = "https://www.google.com/"
             self.items = items
 
             self.profile = webdriver.FirefoxProfile()
@@ -185,7 +185,7 @@ def output(request):
                                             firefox_options=self.options)
 
             # Navigate to the Amazon URL.
-            self.driver.get(self.amazon_url)
+            self.driver.get(self.entry)
 
             # Gets the source
             self.html = self.driver.page_source
@@ -200,7 +200,7 @@ def output(request):
                 print(f"Searching on LDLC for {item}...")
 
                 self.driver.implicitly_wait(0.55)
-                self.driver.get(self.amazon_url)
+                self.driver.get(self.entry)
 
                 search = self.driver.find_element_by_name("q")
 
@@ -290,7 +290,7 @@ def output(request):
 
         def __init__(self, items):
             """Setup bot for LDLC URL."""
-            self.amazon_url = "https://www.google.com/"
+            self.entry = "https://www.google.com/"
             self.items = items
             self.profile = webdriver.FirefoxProfile()
             self.options = Options()
@@ -299,7 +299,7 @@ def output(request):
                                             firefox_options=self.options)
 
             # Navigate to the Amazon URL.
-            self.driver.get(self.amazon_url)
+            self.driver.get(self.entry)
 
             # Gets the source
             self.html = self.driver.page_source
@@ -314,7 +314,7 @@ def output(request):
                 print(f"Searching on Maxgaming for {item}...")
 
                 self.driver.implicitly_wait(0.55)
-                self.driver.get(self.amazon_url)
+                self.driver.get(self.entry)
 
                 search = self.driver.find_element_by_name("q")
 
@@ -388,6 +388,7 @@ def output(request):
                             converted_price_maxgaming = prixez[0:6]
                         except Exception:
                             print('')
+
                     elif "www.maxgaming.fi" in URL:
                         try:
                             prixez = soup.find('span', {'class': 'PrisBOLD'}).get_text()

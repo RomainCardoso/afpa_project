@@ -2,6 +2,9 @@ from django import forms
 
 class ContactForm(forms.Form):
     item = forms.CharField()
+    def __init__(self, *args, **kwargs):
+        super(ContactForm, self).__init__(*args, **kwargs)
+        self.fields['item'].label = ''
 
 
 class HiddenForm(forms.Form):
